@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>北京 → 山西 · 5天4晚路书</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛩️</text></svg>">
+<script src="https://registry.npmmirror.com/lucide/1.28.0/files/dist/umd/lucide.min.js"></script>
+<style>
+:root{
+  --bg:#FAF7F1; --tint:#F1EAE0; --surface:#FFFFFF;
+  --t1:#3B342C; --t2:#6B6154; --t3:#98907F;
+  --acc:#B5442B; --acc-h:#93371F; --on:#FFF8EE;
+  --gold:#C9A24B; --good:#4A7A4B; --warn:#B45309; --bad:#B02E2E;
+  --radius:16px; --btnr:12px; --bstr:10%;
+  --border:color-mix(in srgb,var(--t1) var(--bstr),transparent);
+  --card:var(--surface);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--t2);font-family:-apple-system,'PingFang SC','Noto Sans SC',sans-serif;line-height:1.65;padding-bottom:40px}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+img{max-width:100%;display:block;border-radius:var(--radius)}
+h1,h2,h3{color:var(--t1);line-height:1.3}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;background:color-mix(in srgb,var(--acc) 14%,var(--surface));color:var(--acc);font-weight:700;font-size:12px;padding:5px 12px;border-radius:999px;letter-spacing:.05em}
+.pill{display:inline-flex;align-items:center;gap:5px;background:color-mix(in srgb,var(--acc) 10%,var(--surface));color:var(--acc);font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px}
+.badge-real{display:inline-block;background:color-mix(in srgb,var(--good) 16%,var(--surface));color:var(--good);font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;vertical-align:1px}
+.badge-ai{display:inline-block;background:color-mix(in srgb,var(--warn) 14%,var(--surface));color:var(--warn);font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;vertical-align:1px}
+.hero{position:relative;width:100%;min-height:100svh;min-height:100vh;background:linear-gradient(rgba(20,14,10,.55),rgba(20,14,10,.75)),url('https://pixabay.com/get/gdbdcc14d34d36fe8040152a21dc281afdb2fa06d16c59d1e2ec785fc0482b38b7795ea768ee188a1abbc8bb38a3c5efb5906094adb0c4263bd9726f247d5a6d4_1280.jpg') center/cover no-repeat;display:flex;align-items:flex-end;padding:0 22px 40px}
+.hero-in{max-width:720px;color:var(--on)}
+.hero-in .t{font-size:clamp(30px,8vw,54px);font-weight:800;letter-spacing:.02em;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.hero-in .s{margin-top:10px;font-size:clamp(15px,3.6vw,20px);color:#F6EBDD;max-width:620px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.hero-stats span{background:rgba(255,250,240,.16);border:1px solid rgba(255,250,240,.35);backdrop-filter:blur(6px);padding:6px 12px;border-radius:10px;font-size:12.5px;color:#FFF4E6}
+.gen{position:absolute;top:16px;left:22px;font-size:12px;color:rgba(255,244,230,.85);background:rgba(0,0,0,.35);padding:5px 12px;border-radius:999px;backdrop-filter:blur(4px)}
+nav.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-in{display:flex;overflow-x:auto;gap:4px;padding:8px 22px;max-width:1060px;margin:0 auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav-in a{white-space:nowrap;color:var(--t2);text-decoration:none;font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid transparent}
+.nav-in a.active{color:var(--on);background:var(--acc)}
+.sect{padding:44px 0 8px}
+.sect-head{margin-bottom:20px}
+.sect-head h2{font-size:clamp(22px,5vw,32px);display:flex;align-items:center;gap:10px}
+.sect-head .sub{color:var(--t3);font-size:13.5px;margin-top:6px}
+.day-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:22px;margin-bottom:26px}
+.day-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+.day-num{background:var(--acc);color:var(--on);font-weight:800;padding:6px 14px;border-radius:var(--radius);font-size:15px}
+.day-title{font-size:20px;font-weight:800}
+.grid-2{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:760px){.grid-2{grid-template-columns:1.05fr .95fr;align-items:flex-start}}
+.kv{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--t2);margin-bottom:12px}
+.kv b{color:var(--t1)}
+.mapframe{width:100%;height:300px;border:1px solid var(--border);border-radius:var(--radius);background:#eee}
+.map-cap{font-size:11.5px;color:var(--t3);margin-top:5px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.btn-nav{display:block;width:100%;text-align:center;background:var(--acc);color:var(--on);text-decoration:none;font-weight:800;font-size:15px;padding:13px;border-radius:var(--radius);margin:12px 0;border:none;cursor:pointer}
+.btn-nav:active{background:var(--acc-h)}
+.btn-nav:hover,.btn-nav:focus{background:var(--acc-h);color:var(--on)}
+.btn-nav svg{vertical-align:-2px;margin-right:5px}
+.field{margin:12px 0}
+.field-t{display:flex;align-items:center;gap:7px;font-weight:800;color:var(--t1);font-size:14px;margin-bottom:4px}
+.field-t svg{color:var(--acc);flex:none}
+.field-b{font-size:13.5px;color:var(--t2)}
+.ul{list-style:none}
+.ul li{padding:5px 0 5px 18px;position:relative;font-size:13.5px}
+.ul li::before{content:"";position:absolute;left:2px;top:13px;width:6px;height:6px;background:var(--acc);border-radius:50%}
+.photo{margin:12px 0}
+.photo figcaption{font-size:11px;color:var(--t3);margin-top:4px}
+.sight{background:var(--tint);border-radius:12px;margin-top:10px;overflow:hidden}
+.sight-btn{display:flex;width:100%;align-items:center;justify-content:space-between;gap:8px;background:none;border:none;padding:13px 15px;font-size:14px;font-weight:800;color:var(--t1);cursor:pointer;text-align:left}
+.sight-btn .chev{flex:none;color:var(--acc);transition:transform .25s}
+.sight-body{display:none;padding:2px 16px 16px;font-size:13.5px;color:var(--t2)}
+.sight.open .sight-body{display:block}
+.sight.open .chev{transform:rotate(180deg)}
+.hot,.food,.hotel{background:var(--tint);border-radius:10px;padding:10px 14px;margin-top:8px;font-size:13px;color:var(--t2)}
+.hot b,.food b,.hotel b{color:var(--acc);font-size:13px}
+.hotel{background:color-mix(in srgb,var(--gold) 12%,var(--surface));border-left:3px solid var(--gold)}
+.small-src{font-size:11px;color:var(--t3);margin-top:4px}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--surface);border-radius:var(--radius);overflow:hidden}
+.tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.tbl th{background:var(--tint);color:var(--t1);font-weight:700}
+.tbl tr:last-child td{border-bottom:none}
+.foot{color:var(--t3);font-size:12px;margin-top:30px;text-align:center;padding:0 22px}
+.lucide{vertical-align:-2px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="gen">本路书生成于 2026-11-15 · 易变信息基于该时刻实时数据，出行前请复核</div>
+  <div class="hero-in">
+    <span class="eyebrow">⛩ 世界文化遗产 · 古建朝圣 · 适合 4-5 天</span>
+    <h1 class="t">北京 → 山西 · 5 天 4 晚<br>晋北·晋中古建文化线</h1>
+    <p class="s">大同云冈石窟 → 五台山佛教圣地 → 太原晋祠 → 平遥古城，一条穿越北魏石窟、唐代古建、明清晋商的世界遗产人文线。自驾往返约 1550 公里，也可全程高铁串起。</p>
+    <div class="hero-stats">
+      <span>🛣 全程自驾 ≈1550km</span>
+      <span>🗓 5 天 4 晚</span>
+      <span>⛰ 沿线海拔 600–3000m</span>
+      <span>🏨 酒店 300–400 元/晚</span>
+      <span>💰 人均预算 ≈2000–2800 元</span>
+      <span>🍂 最佳 4–6月 / 9–10月</span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav"><div class="nav-in" id="navLinks">
+  <a href="#drive">自驾路线</a>
+  <a href="#train">高铁方案</a>
+  <a href="#day1">Day1 大同</a>
+  <a href="#day2">Day2 五台山</a>
+  <a href="#day3">Day3 太原</a>
+  <a href="#day4">Day4 平遥</a>
+  <a href="#day5">Day5 返程</a>
+  <a href="#appendix">附录·花费</a>
+</div></nav>
+
+<div class="wrap">
+
+<section class="sect" id="drive">
+  <div class="sect-head">
+    <span class="eyebrow">🚗 自驾方案</span>
+    <h2>全程自驾 · 京昆 / 二广高速往返</h2>
+    <p class="sub">山西距北京约 500 公里（太原），全程闭环约 1550 公里，高速为主、五台山段含山路。<span class="badge-ai">⚪ AI 估算，实际以导航实时为准</span></p>
+  </div>
+  <div class="mapframe" style="height:320px">
+    <iframe src="https://www.amap.com/search?query=云冈石窟&city=大同" style="width:100%;height:100%;border:0" loading="lazy" title="山西自驾路线高德地图"></iframe>
+  </div>
+  <p class="map-cap">⚠️ 高德官方网页地图内嵌 · 非实时轨迹，请以导航为准</p>
+  <table class="tbl" style="margin-top:14px">
+    <tr><th>路段</th><th>高速</th><th>里程</th><th>耗时</th><th>备注</th></tr>
+    <tr><td>北京 → 大同</td><td>京藏高速 G6</td><td>≈350km</td><td>4h</td><td>出京易堵，早出发</td></tr>
+    <tr><td>大同 → 五台山</td><td>G18 荣乌 + S45 大运</td><td>≈230km</td><td>4h</td><td>部分山路弯多</td></tr>
+    <tr><td>五台山 → 太原</td><td>G1813 + G5 京昆</td><td>≈250km</td><td>3.5h</td><td>五台山路段有盘山</td></tr>
+    <tr><td>太原 → 平遥</td><td>G5 京昆</td><td>≈100km</td><td>1.5h</td><td>全程平坦</td></tr>
+    <tr><td>平遥 → 北京</td><td>G5 京昆 + G18 荣乌</td><td>≈620km</td><td>7h</td><td>返程长途，中途在石家庄休息</td></tr>
+  </table>
+  <div class="grid-2" style="margin-top:16px">
+    <div class="hotel">
+      <b>⛽ 油费估算</b><br>按 8L/100km、油价 ≈7.8 元/L，1550km ≈ 967 元 → 估 <b>900–1000 元</b>（高速油耗低，实测或更省）<br><span class="small-src">⚪ 估算 · 油价随行情波动，出发前加油时核实</span>
+    </div>
+    <div class="hotel">
+      <b>🛣 过路费估算</b><br>高速约 0.45 元/km，1550km ≈ 700 元 → 估 <b>650–750 元</b>（ETC 常有 95 折）<br><span class="small-src">⚪ 估算 · 以实际收费站扣费为准</span>
+    </div>
+  </div>
+</section>
+
+<section class="sect" id="train">
+  <div class="sect-head">
+    <span class="eyebrow">🚆 高铁方案</span>
+    <h2>全程高铁 · 每天 9 点后出发</h2>
+    <p class="sub">京张高铁/大西高铁串联，五台山段需转乘接驳。<span class="badge-ai">⚪ AI 估算时刻，请以 12306 实时为准</span></p>
+  </div>
+  <table class="tbl">
+    <tr><th>段</th><th>车次参考</th><th>时刻(估)</th><th>耗时</th><th>说明</th></tr>
+    <tr><td>北京 → 大同</td><td>G9213</td><td>09:00 → 10:42</td><td>≈1h42m</td><td>北京北/清河站上车</td></tr>
+    <tr><td>大同 → 五台山</td><td>高铁+包车</td><td>09:00 出发</td><td>≈3.5–4h</td><td>无直达，建议包车/大巴</td></tr>
+    <tr><td>五台山 → 太原</td><td>五台县站高铁</td><td>09:00 出发</td><td>≈2h</td><td>台怀镇需先至五台县站</td></tr>
+    <tr><td>太原 → 平遥</td><td>太原南 → 平遥古城</td><td>09:00 → 09:35</td><td>≈35m</td><td>车次密集</td></tr>
+    <tr><td>平遥 → 北京</td><td>平遥古城/太原南中转</td><td>09:00 出发</td><td>≈4h</td><td>返京视直达车次</td></tr>
+  </table>
+  <p style="margin-top:10px;font-size:12.5px;color:var(--t3)">🚄 高铁往返票参考：北京⇌大同二等座 ≈ 170 元/程；太原⇌平遥 ≈ 28 元/程。<span class="badge-ai">⚪ 以 12306 实时票价为准</span></p>
+</section>
+
+
+<section class="sect" id="day1">
+  <div class="day-card">
+    <div class="day-head">
+      <span class="day-num">Day 1</span>
+      <span class="day-title">北京 → 大同 · 云冈石窟</span>
+      <span class="pill">🚗 自驾 / 🚆 高铁</span>
+    </div>
+
+    <div class="kv">
+      <span>📍 <b>北京 → 大同</b></span>
+      <span>📏 <b>自驾 350km</b></span>
+      <span>⏱ <b>4h（高铁 1h42m）</b></span>
+      <span>🚦 <b>09:00 出发（≥9 点）</b></span>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="mapframe"><iframe src="https://www.amap.com/search?query=云冈石窟&city=大同" style="width:100%;height:100%;border:0" loading="lazy" title="北京 → 大同 · 云冈石窟 地图"></iframe></div>
+        <p class="map-cap">⚠️ 高德官方网页地图内嵌 · 非实时轨迹</p>
+        <a class="btn-nav" href="https://uri.amap.com/marker?position=113.1399,40.1128&name=云冈石窟" target="_blank" rel="noopener"><i data-lucide="navigation"></i> 一键导航</a>
+      </div>
+      <div>
+        <div class="field"><div class="field-t"><i data-lucide="route"></i> 本段路况</div><div class="field-b">全程京藏高速 G6，路况良好；出京（五环—康庄）早高峰易堵，建议 9 点后出发避开；大同市区至云冈约 20 分钟。<span class='badge-ai'>⚪ 路况实时以高德为准</span></div></div>
+        <div class="field"><div class="field-t"><i data-lucide="map-pin"></i> 补给点</div><div class="field-b">大同服务区加油站/充电桩齐全；云冈景区门口有停车场、卫生间、餐饮摊。市区加油站密度高。<span class='badge-ai'>⚪ 充电桩以高德实时为准</span></div></div>
+        <div class="field"><div class="field-t"><i data-lucide="alert-triangle"></i> 坑点提醒</div><div class="field-b">⚠️ 云冈石窟周一不闭馆但部分洞窟轮休；景区限流需提前在「云冈石窟」公众号预约。洞窟内禁止拍照（部分可拍）。</div></div>
+        <div class="field"><div class="field-t"><i data-lucide="repeat"></i> 本段 Plan B</div><div class="field-b">⚠️ 若京藏高速出京拥堵，改走京新高速 G7 或国道 110 线绕行。云冈如遇限流，改游大同古城墙 + 九龙壁（免费/低门票）兜底。</div></div>
+      </div>
+    </div>
+
+    <div class="field" style="margin-top:16px"><div class="field-t"><i data-lucide="camera"></i> 沿途看点</div>
+      <ul class="ul">
+        <li><b>云冈石窟</b> — 北魏皇家石窟群，世界文化遗产，45 座主要洞窟绵延 1 公里（游玩 3h）。</li>
+        <li><b>大同古城墙</b> — 可登城墙骑行/漫步，看华严寺、善化寺、九龙壁（2h）。</li>
+        <li><b>悬空寺(可选)</b> — 恒山悬空寺距大同约 80km，需单程 1.5h，时间充裕者可选（门票略贵）。</li>
+      </ul>
+    </div>
+
+    <div class='photo'><img src='https://pixabay.com/get/gdbdcc14d34d36fe8040152a21dc281afdb2fa06d16c59d1e2ec785fc0482b38b7795ea768ee188a1abbc8bb38a3c5efb5906094adb0c4263bd9726f247d5a6d4_1280.jpg' alt='云冈石窟'><figcaption>云冈石窟 · <a href='https://pixabay.com/photos/buddhism-yungang-grottos-878192/' target='_blank' rel='noopener'>Image by Took on Pixabay</a></figcaption></div>
+
+    <div class="field" style="margin-top:6px"><div class="field-t"><i data-lucide="hotel"></i> 🏨 本晚住宿（预算 300–400 元/晚）</div>
+      <div class="hotel"><b>全季酒店(大同万达/古城店)</b> · ¥320–380/晚<br>连锁品质，近古城/云冈；含早餐，停车方便。<br><span class="small-src">⚪ 参考价，请以平台实时为准 · <a style="color:var(--acc)" href="https://uri.amap.com/search?query=全季酒店大同" target="_blank" rel="noopener">高德找店 →</a></span></div>
+      <div class="hotel" style="margin-top:6px;border-left-color:var(--t3)"><b>备选：亚朵酒店 大同</b> · ¥350–400/晚<br>更年轻化，近万达广场，逛街方便。</div>
+    </div>
+
+    <div class="field" style="margin-top:12px"><div class="field-t"><i data-lucide="utensils"></i> 🍜 今日美食（并入行程，不另罗列）</div>
+      <div class="food"><b>东方削面(大同总店)</b> · 人均 ¥20–35 — 大同刀削面招牌，牛肉/猪肉臊子，配卤蛋小菜。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=东方削面大同" target="_blank" rel="noopener">高德找店 →</a></div>
+      <div class="food" style="margin-top:6px"><b>大同烧麦(凤临阁)</b> · 人均 ¥60–100 — 老字号烧麦+百花烧麦，晋北名点，可点莜面。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=凤临阁大同" target="_blank" rel="noopener">高德找店 →</a></div>
+      <div class="food" style="margin-top:6px"><b>浑源凉粉/浑源烧饼</b> · 人均 ¥15–25 — 街头小吃，酸辣爽口，配烧饼当点心。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=浑源凉粉大同" target="_blank" rel="noopener">高德找店 →</a></div>
+    </div>
+
+    
+<div class="sight">
+  <button class="sight-btn" type="button">云冈石窟 <span class="chev"><i data-lucide="chevron-down"></i></span></button>
+  <div class="sight-body">
+    <p><b>🏛 深度看点：</b>北魏文成帝开凿，现存主要洞窟 45 个，雕像 5 万余尊。第 20 窟露天大佛是标志；第 5/6 窟双窟最精美；第 16-20 窟（昙曜五窟）最早。建议请讲解或租讲解器。</p>
+    <div class="hot" style="margin-top:8px"><b>📷 拍照打卡点：</b>露天大佛（第20窟）正面 / 第5窟大佛 / 窟前栈道俯瞰全山 / 景区门口「石窟」二字。</div>
+    <div class="food" style="margin-top:8px"><b>🍜 周边美食：</b>景区周边凉粉、刀削面；回市区吃凤临阁烧麦。</div>
+    <div class="hot" style="margin-top:8px"><b>🗺 游览动线：</b>山门→第16-20窟(昙曜五窟)→第5-13窟→第5窟大佛→西端小窟→坐电瓶车返回。约3h。</div>
+    <p class="small-src">⚪ 信息为 AI 整理，以现场为准</p>
+  </div>
+</div>
+
+<div class="sight">
+  <button class="sight-btn" type="button">大同古城墙·九龙壁 <span class="chev"><i data-lucide="chevron-down"></i></span></button>
+  <div class="sight-body">
+    <p><b>🏛 深度看点：</b>明代城墙，周长约7公里可骑行；九龙壁为明代琉璃照壁，中国最大。华严寺(辽金木构)、善化寺可顺访。</p>
+    <div class="hot" style="margin-top:8px"><b>📷 拍照打卡点：</b>城墙东南角拍日落 / 九龙壁正面 / 华严寺大雄宝殿。</div>
+    <div class="food" style="margin-top:8px"><b>🍜 周边美食：</b>华严寺广场小吃、莜面。</div>
+    <div class="hot" style="margin-top:8px"><b>🗺 游览动线：</b>南门登城墙→骑行至东南角→下城墙步行九龙壁→华严寺。约2-3h。</div>
+    <p class="small-src">⚪ 信息为 AI 整理，以现场为准</p>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+<section class="sect" id="day2">
+  <div class="day-card">
+    <div class="day-head">
+      <span class="day-num">Day 2</span>
+      <span class="day-title">大同 → 五台山 · 佛教圣地</span>
+      <span class="pill">🚗 自驾 / 🚗 包车</span>
+    </div>
+
+    <div class="kv">
+      <span>📍 <b>大同 → 五台山台怀镇</b></span>
+      <span>📏 <b>自驾 230km</b></span>
+      <span>⏱ <b>4h</b></span>
+      <span>🚦 <b>09:00 出发（≥9 点）</b></span>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="mapframe"><iframe src="https://www.amap.com/search?query=五台山台怀镇&city=忻州" style="width:100%;height:100%;border:0" loading="lazy" title="大同 → 五台山 · 佛教圣地 地图"></iframe></div>
+        <p class="map-cap">⚠️ 高德官方网页地图内嵌 · 非实时轨迹</p>
+        <a class="btn-nav" href="https://uri.amap.com/marker?position=113.5906,39.0070&name=五台山台怀镇" target="_blank" rel="noopener"><i data-lucide="navigation"></i> 一键导航</a>
+      </div>
+      <div>
+        <div class="field"><div class="field-t"><i data-lucide="route"></i> 本段路况</div><div class="field-b">G18 荣乌高速 + S45 大运，后段进入五台山景区盘山公路（砂石岭多弯），全程约 4h。五台山段限速 40-60。<span class='badge-ai'>⚪ 路况实时以高德为准</span></div></div>
+        <div class="field"><div class="field-t"><i data-lucide="map-pin"></i> 补给点</div><div class="field-b">中途可在砂河镇/繁峙县加油站、餐饮补给；台怀镇内商业齐全，有停车场、厕所、药店。</div></div>
+        <div class="field"><div class="field-t"><i data-lucide="alert-triangle"></i> 坑点提醒</div><div class="field-b">⚠️ 五台山景区需提前在「五台山」公众号预约门票+车辆进山预约（旺季必约）；海拔 2000m+，注意高反与保暖。冬季冰雪路面需防滑链。</div></div>
+        <div class="field"><div class="field-t"><i data-lucide="repeat"></i> 本段 Plan B</div><div class="field-b">⚠️ 若进山道路因冰雪/管制封闭，改宿繁峙县或砂河镇，次日再进；或改游大同周边的应县木塔（世界最高木塔）兜底。</div></div>
+      </div>
+    </div>
+
+    <div class="field" style="margin-top:16px"><div class="field-t"><i data-lucide="camera"></i> 沿途看点</div>
+      <ul class="ul">
+        <li><b>台怀镇(核心景区)</b> — 五台山中心，集中显通寺、菩萨顶、塔院寺，白塔是标志（游玩 3h）。</li>
+        <li><b>黛螺顶</b> — 登 1080 级台阶（或缆车）朝拜「小朝台」，山顶视野开阔（2h）。</li>
+        <li><b>南山寺/殊像寺</b> — 依山而建、清幽静谧，拍寺庙与山色（1.5h）。</li>
+      </ul>
+    </div>
+
+    <div class='photo'><img src='https://pixabay.com/get/gdfaeeabc406ed419b9824a23375e0d9a85eff661de50142f4c678cbfba196ef77279dc8dcf70f0a3a47ae91565d8017830ee2648f37a4c2ba9a57923454eb17e_1280.jpg' alt='五台山白塔'><figcaption>五台山台怀镇白塔 · <a href='https://pixabay.com/photos/white-tower-mount-wutai-the-scenery-2434758/' target='_blank' rel='noopener'>Image by kelixinamuti on Pixabay</a></figcaption></div>
+
+    <div class="field" style="margin-top:6px"><div class="field-t"><i data-lucide="hotel"></i> 🏨 本晚住宿（预算 300–400 元/晚）</div>
+      <div class="hotel"><b>五台山台怀镇精品民宿</b> · ¥320–400/晚<br>镇内步行可达中心区，民宿多含早餐，冬季暖气足。<br><span class="small-src">⚪ 参考价，请以平台实时为准 · <a style="color:var(--acc)" href="https://uri.amap.com/search?query=五台山民宿" target="_blank" rel="noopener">高德找店 →</a></span></div>
+      <div class="hotel" style="margin-top:6px;border-left-color:var(--t3)"><b>备选：五台山禅意酒店(台怀镇)</b> · ¥350–400/晚<br>偏禅修氛围，环境清幽。</div>
+    </div>
+
+    <div class="field" style="margin-top:12px"><div class="field-t"><i data-lucide="utensils"></i> 🍜 今日美食（并入行程，不另罗列）</div>
+      <div class="food"><b>五台山素斋(普化寺)</b> · 人均 ¥40–80 — 寺庙素斋体验，台蘑炖豆腐、素什锦，清淡养生。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=五台山素斋" target="_blank" rel="noopener">高德找店 →</a></div>
+      <div class="food" style="margin-top:6px"><b>台蘑炖豆腐/台蘑酱</b> · 人均 ¥30–60 — 五台山特产台蘑，炖豆腐、做酱，鲜香。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=五台山台蘑" target="_blank" rel="noopener">高德找店 →</a></div>
+      <div class="food" style="margin-top:6px"><b>莜面栲栳栳(晋北风味)</b> · 人均 ¥20–40 — 莜面蒸制蘸羊肉/酱料，山西特色。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=五台山莜面栲栳栳" target="_blank" rel="noopener">高德找店 →</a></div>
+    </div>
+
+    
+<div class="sight">
+  <button class="sight-btn" type="button">台怀镇·显通寺·菩萨顶 <span class="chev"><i data-lucide="chevron-down"></i></span></button>
+  <div class="sight-body">
+    <p><b>🏛 深度看点：</b>显通寺为五台山最大古刹（北魏始建）；菩萨顶为五台山最高寺院（清代皇家道场），可俯瞰台怀镇。塔院寺白塔为标志。</p>
+    <div class="hot" style="margin-top:8px"><b>📷 拍照打卡点：</b>塔院寺白塔全景 / 菩萨顶俯瞰台怀镇 / 显通寺铜殿。</div>
+    <div class="food" style="margin-top:8px"><b>🍜 周边美食：</b>普化寺素斋。</div>
+    <div class="hot" style="margin-top:8px"><b>🗺 游览动线：</b>显通寺→塔院寺(白塔)→上行菩萨顶。约3h。</div>
+    <p class="small-src">⚪ 信息为 AI 整理，以现场为准</p>
+  </div>
+</div>
+
+<div class="sight">
+  <button class="sight-btn" type="button">黛螺顶(小朝台) <span class="chev"><i data-lucide="chevron-down"></i></span></button>
+  <div class="sight-body">
+    <p><b>🏛 深度看点：</b>登 1080 级台阶或乘缆车，山顶黛螺顶寺五方文殊合一，称为「小朝台」，沿途可赏山景。</p>
+    <div class="hot" style="margin-top:8px"><b>📷 拍照打卡点：</b>台阶俯瞰 / 山顶五方文殊殿 / 缆车山景。</div>
+    <div class="food" style="margin-top:8px"><b>🍜 周边美食：</b>山脚小吃摊、莜面。</div>
+    <div class="hot" style="margin-top:8px"><b>🗺 游览动线：</b>台阶登山→山顶礼拜→缆车或步行下山。约2-2.5h。</div>
+    <p class="small-src">⚪ 信息为 AI 整理，以现场为准</p>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+<section class="sect" id="day3">
+  <div class="day-card">
+    <div class="day-head">
+      <span class="day-num">Day 3</span>
+      <span class="day-title">五台山 → 太原 · 晋祠古建</span>
+      <span class="pill">🚗 自驾 / 🚆 高铁</span>
+    </div>
+
+    <div class="kv">
+      <span>📍 <b>五台山 → 太原</b></span>
+      <span>📏 <b>自驾 250km</b></span>
+      <span>⏱ <b>3.5h（高铁约2h）</b></span>
+      <span>🚦 <b>09:00 出发（≥9 点）</b></span>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="mapframe"><iframe src="https://www.amap.com/search?query=晋祠&city=太原" style="width:100%;height:100%;border:0" loading="lazy" title="五台山 → 太原 · 晋祠古建 地图"></iframe></div>
+        <p class="map-cap">⚠️ 高德官方网页地图内嵌 · 非实时轨迹</p>
+        <a class="btn-nav" href="https://uri.amap.com/marker?position=112.4307,37.7070&name=晋祠" target="_blank" rel="noopener"><i data-lucide="navigation"></i> 一键导航</a>
+      </div>
+      <div>
+        <div class="field"><div class="field-t"><i data-lucide="route"></i> 本段路况</div><div class="field-b">五台山出景区盘山路 + G1813 高速 + G5 京昆，进太原前一段修路路段需留意；全程约 3.5h。<span class='badge-ai'>⚪ 路况实时以高德为准</span></div></div>
+        <div class="field"><div class="field-t"><i data-lucide="map-pin"></i> 补给点</div><div class="field-b">忻州/太原服务区加油站、充电桩齐全；太原市区商圈补给充足。</div></div>
+        <div class="field"><div class="field-t"><i data-lucide="alert-triangle"></i> 坑点提醒</div><div class="field-b">⚠️ 晋祠周一闭馆（部分展区）；山西博物院周一闭馆需提前公众号预约（免费但限流）。晋祠景区较大，预留 2-3h。</div></div>
+        <div class="field"><div class="field-t"><i data-lucide="repeat"></i> 本段 Plan B</div><div class="field-b">⚠️ 若五台山出山拥堵，绕行五台县走国道至忻州再上高速；晋祠遇闭馆改游太原古县城或双塔寺。</div></div>
+      </div>
+    </div>
+
+    <div class="field" style="margin-top:16px"><div class="field-t"><i data-lucide="camera"></i> 沿途看点</div>
+      <ul class="ul">
+        <li><b>晋祠</b> — 北宋圣母殿、鱼沼飞梁、难老泉，中国现存最早木构建筑之一，古建爱好者的朝圣地（3h）。</li>
+        <li><b>山西博物院</b> — 晋魂主题，镇馆之宝晋侯鸟尊，系统看山西三千年（2h，免费）。</li>
+        <li><b>太原古县城(可选)</b> — 明清县城格局，夜间有灯光秀（1.5h）。</li>
+      </ul>
+    </div>
+
+    <div class='photo'><img src='https://p26-volcsearch-sign.byteimg.com/tos-cn-i-xstd03g9pf/5b17606a8f1445e3b576f264ccc9bc48~tplv-obj.jpeg?lk3s=1515c32d&scene=volc_search&x-expires=1802530801&x-signature=vG10qWq77sG5UYlbZHY7sKbphss%3D' alt='晋祠'><figcaption>太原晋祠 · <a href='https://www.amap.com/search?query=晋祠' target='_blank' rel='noopener'>图片来源：高德地图搜索</a></figcaption></div>
+
+    <div class="field" style="margin-top:6px"><div class="field-t"><i data-lucide="hotel"></i> 🏨 本晚住宿（预算 300–400 元/晚）</div>
+      <div class="hotel"><b>锦江都城酒店(太原柳巷店)</b> · ¥300–380/晚<br>近柳巷商圈/食品街，地铁可达，含早餐，出行方便。<br><span class="small-src">⚪ 参考价，请以平台实时为准 · <a style="color:var(--acc)" href="https://uri.amap.com/search?query=锦江都城太原" target="_blank" rel="noopener">高德找店 →</a></span></div>
+      <div class="hotel" style="margin-top:6px;border-left-color:var(--t3)"><b>备选：全季酒店 太原</b> · ¥320–380/晚<br>连锁稳定，位置多在商圈。</div>
+    </div>
+
+    <div class="field" style="margin-top:12px"><div class="field-t"><i data-lucide="utensils"></i> 🍜 今日美食（并入行程，不另罗列）</div>
+      <div class="food"><b>清和元·头脑</b> · 人均 ¥30–50 — 太原名小吃「头脑」（黄酒+羊肉+山药熬制），配烧麦，早餐/上午吃最地道。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=清和元头脑太原" target="_blank" rel="noopener">高德找店 →</a></div>
+      <div class="food" style="margin-top:6px"><b>太原过油肉/面食(面食博物馆)</b> · 人均 ¥40–80 — 山西过油肉、剔尖/刀削面，面食种类丰富。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=太原过油肉" target="_blank" rel="noopener">高德找店 →</a></div>
+      <div class="food" style="margin-top:6px"><b>老陈醋(醋坊)</b> · 人均 ¥20–50 — 太原老陈醋文化体验，可买醋+醋泡产品当伴手礼。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=太原老陈醋" target="_blank" rel="noopener">高德找店 →</a></div>
+    </div>
+
+    
+<div class="sight">
+  <button class="sight-btn" type="button">晋祠 <span class="chev"><i data-lucide="chevron-down"></i></span></button>
+  <div class="sight-body">
+    <p><b>🏛 深度看点：</b>始建北魏，圣母殿为北宋建筑，殿前鱼沼飞梁是中国仅存的古代立交桥式古建，难老泉三绝之一。三绝三宝（圣母殿、鱼沼飞梁、献殿）。</p>
+    <div class="hot" style="margin-top:8px"><b>📷 拍照打卡点：</b>圣母殿正面 / 鱼沼飞梁 / 难老泉 / 周柏。</div>
+    <div class="food" style="margin-top:8px"><b>🍜 周边美食：</b>晋祠门口面馆、太原市区食品街。</div>
+    <div class="hot" style="margin-top:8px"><b>🗺 游览动线：</b>大门→水镜台→金人台→献殿→鱼沼飞梁→圣母殿→难老泉→周柏→出口。约2.5-3h。</div>
+    <p class="small-src">⚪ 信息为 AI 整理，以现场为准</p>
+  </div>
+</div>
+
+<div class="sight">
+  <button class="sight-btn" type="button">山西博物院 <span class="chev"><i data-lucide="chevron-down"></i></span></button>
+  <div class="sight-body">
+    <p><b>🏛 深度看点：</b>镇馆之宝晋侯鸟尊，馆藏晋魂、土木华章等专题，系统呈现山西考古与古建文明。需提前公众号预约。</p>
+    <div class="hot" style="margin-top:8px"><b>📷 拍照打卡点：</b>晋侯鸟尊 / 土木华章古建模型厅。</div>
+    <div class="food" style="margin-top:8px"><b>🍜 周边美食：</b>博物院周边简餐。</div>
+    <div class="hot" style="margin-top:8px"><b>🗺 游览动线：</b>建议 2h 参观，重点晋魂厅+土木华章厅。</div>
+    <p class="small-src">⚪ 信息为 AI 整理，以现场为准</p>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+<section class="sect" id="day4">
+  <div class="day-card">
+    <div class="day-head">
+      <span class="day-num">Day 4</span>
+      <span class="day-title">太原 → 平遥 · 明清晋商</span>
+      <span class="pill">🚗 自驾 / 🚆 高铁</span>
+    </div>
+
+    <div class="kv">
+      <span>📍 <b>太原 → 平遥古城</b></span>
+      <span>📏 <b>自驾 100km</b></span>
+      <span>⏱ <b>1.5h（高铁 35m）</b></span>
+      <span>🚦 <b>09:00 出发（≥9 点）</b></span>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="mapframe"><iframe src="https://www.amap.com/search?query=平遥古城&city=晋中" style="width:100%;height:100%;border:0" loading="lazy" title="太原 → 平遥 · 明清晋商 地图"></iframe></div>
+        <p class="map-cap">⚠️ 高德官方网页地图内嵌 · 非实时轨迹</p>
+        <a class="btn-nav" href="https://uri.amap.com/marker?position=112.1833,37.2056&name=平遥古城" target="_blank" rel="noopener"><i data-lucide="navigation"></i> 一键导航</a>
+      </div>
+      <div>
+        <div class="field"><div class="field-t"><i data-lucide="route"></i> 本段路况</div><div class="field-b">G5 京昆高速，全程平坦畅通，约 1.5h；平遥古城外围停车后步行/电瓶车进城（古城内禁机动车）。<span class='badge-ai'>⚪ 路况实时以高德为准</span></div></div>
+        <div class="field"><div class="field-t"><i data-lucide="map-pin"></i> 补给点</div><div class="field-b">平遥古城外停车场/游客中心有厕所、餐饮；古城内客栈集中，商业完善。</div></div>
+        <div class="field"><div class="field-t"><i data-lucide="alert-triangle"></i> 坑点提醒</div><div class="field-b">⚠️ 平遥古城通票（含20余景点）需在「平遥古城」公众号购买，当日多次进出；古城内禁自驾车，车停南门外停车场。旺季住古城内注意噪音与行李搬运。</div></div>
+        <div class="field"><div class="field-t"><i data-lucide="repeat"></i> 本段 Plan B</div><div class="field-b">⚠️ 若高速拥堵改走国道 108；若古城人多可先游城外文庙/双林寺（世界文化遗产，泥塑一绝）。</div></div>
+      </div>
+    </div>
+
+    <div class="field" style="margin-top:16px"><div class="field-t"><i data-lucide="camera"></i> 沿途看点</div>
+      <ul class="ul">
+        <li><b>平遥古城墙</b> — 明代城墙保存完整，可登城绕行看全景（2h）。</li>
+        <li><b>日升昌票号</b> — 中国第一家票号，看晋商金融发源地（1h）。</li>
+        <li><b>明清街/县衙</b> — 南大街明清街、县衙大堂，体验古城夜游（2h）。</li>
+      </ul>
+    </div>
+
+    <div class='photo'><img src='https://images.unsplash.com/photo-1793256685274-32dddc7b635a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDI3NDk1fDB8MXxzZWFyY2h8MTF8fFBpbmd5YW8lMjBhbmNpZW50JTIwY2l0eSUyMHdhbGx8ZW58MXx8fHwxNzk0NzU0NzcwfDA&ixlib=rb-4.1.0&q=80&w=1080' alt='平遥古城'><figcaption>平遥古城 · <a href='https://unsplash.com/photos/electric-vehicle-on-street-in-pingyao-DvSo4ORRUa4' target='_blank' rel='noopener'>Photo by Filiz Elaerts on Unsplash</a></figcaption></div>
+
+    <div class="field" style="margin-top:6px"><div class="field-t"><i data-lucide="hotel"></i> 🏨 本晚住宿（预算 300–400 元/晚）</div>
+      <div class="hotel"><b>平遥古城内精品客栈</b> · ¥300–400/晚<br>四合院式客栈，体验明清院落，位置多在明清街/县衙附近。<br><span class="small-src">⚪ 参考价，请以平台实时为准 · <a style="color:var(--acc)" href="https://uri.amap.com/search?query=平遥古城客栈" target="_blank" rel="noopener">高德找店 →</a></span></div>
+      <div class="hotel" style="margin-top:6px;border-left-color:var(--t3)"><b>备选：平遥天元奎客栈</b> · ¥320–400/晚<br>老字号客栈，餐饮也有名。</div>
+    </div>
+
+    <div class="field" style="margin-top:12px"><div class="field-t"><i data-lucide="utensils"></i> 🍜 今日美食（并入行程，不另罗列）</div>
+      <div class="food"><b>平遥牛肉(冠云)</b> · 人均 ¥40–70/份 — 平遥名产，卤制牛肉，配刀削面/下酒。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=平遥牛肉" target="_blank" rel="noopener">高德找店 →</a></div>
+      <div class="food" style="margin-top:6px"><b>平遥碗托</b> · 人均 ¥10–20 — 荞麦蒸制，凉拌酸辣，街头必吃。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=平遥碗托" target="_blank" rel="noopener">高德找店 →</a></div>
+      <div class="food" style="margin-top:6px"><b>莜面栲栳栳/天元奎菜馆</b> · 人均 ¥60–100 — 古城老字号家常菜，莜面栲栳栳蘸羊肉。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=天元奎平遥" target="_blank" rel="noopener">高德找店 →</a></div>
+    </div>
+
+    
+<div class="sight">
+  <button class="sight-btn" type="button">平遥古城墙 <span class="chev"><i data-lucide="chevron-down"></i></span></button>
+  <div class="sight-body">
+    <p><b>🏛 深度看点：</b>明代城墙，周长约6公里，四角有角楼，可登城骑行或步行绕行，俯瞰古城棋盘格局。</p>
+    <div class="hot" style="margin-top:8px"><b>📷 拍照打卡点：</b>南门/北门登城墙全景 / 角楼 / 黄昏时城墙与城内街景。</div>
+    <div class="food" style="margin-top:8px"><b>🍜 周边美食：</b>古城内小吃街、碗托。</div>
+    <div class="hot" style="margin-top:8px"><b>🗺 游览动线：</b>南门登城→沿墙至西门→下城入明清街。约1.5-2h。</div>
+    <p class="small-src">⚪ 信息为 AI 整理，以现场为准</p>
+  </div>
+</div>
+
+<div class="sight">
+  <button class="sight-btn" type="button">日升昌票号·明清街 <span class="chev"><i data-lucide="chevron-down"></i></span></button>
+  <div class="sight-body">
+    <p><b>🏛 深度看点：</b>中国第一家票号，看清代金融发源地与银窖；南大街明清街集中票号、镖局、当铺、县衙。</p>
+    <div class="hot" style="margin-top:8px"><b>📷 拍照打卡点：</b>日升昌柜台场景 / 明清街石板路 / 县衙大堂。</div>
+    <div class="food" style="margin-top:8px"><b>🍜 周边美食：</b>平遥牛肉、碗托、天元奎。</div>
+    <div class="hot" style="margin-top:8px"><b>🗺 游览动线：</b>日升昌→协同庆→镖局→县衙→明清街闲逛。约3h。</div>
+    <p class="small-src">⚪ 信息为 AI 整理，以现场为准</p>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+<section class="sect" id="day5">
+  <div class="day-card">
+    <div class="day-head">
+      <span class="day-num">Day 5</span>
+      <span class="day-title">平遥 → 北京 · 返程</span>
+      <span class="pill">🚗 自驾 / 🚆 高铁</span>
+    </div>
+
+    <div class="kv">
+      <span>📍 <b>平遥 → 北京</b></span>
+      <span>📏 <b>自驾 620km</b></span>
+      <span>⏱ <b>7h（高铁约4h）</b></span>
+      <span>🚦 <b>09:00 出发（≥9 点）</b></span>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="mapframe"><iframe src="https://www.amap.com/search?query=平遥古城&city=晋中" style="width:100%;height:100%;border:0" loading="lazy" title="平遥 → 北京 · 返程 地图"></iframe></div>
+        <p class="map-cap">⚠️ 高德官方网页地图内嵌 · 非实时轨迹</p>
+        <a class="btn-nav" href="https://uri.amap.com/marker?position=112.1833,37.2056&name=平遥古城" target="_blank" rel="noopener"><i data-lucide="navigation"></i> 一键导航</a>
+      </div>
+      <div>
+        <div class="field"><div class="field-t"><i data-lucide="route"></i> 本段路况</div><div class="field-b">平遥→太原段 G5 京昆 + 太原→北京段 G5/G18 荣乌 + G4 京港澳，返程长途约 620km/7h，建议每 2h 进服务区休息。<span class='badge-ai'>⚪ 路况实时以高德为准</span></div></div>
+        <div class="field"><div class="field-t"><i data-lucide="map-pin"></i> 补给点</div><div class="field-b">沿途太原、石家庄等服务区加油站、充电桩、餐厅齐全；石家庄是理想中途休息点。</div></div>
+        <div class="field"><div class="field-t"><i data-lucide="alert-triangle"></i> 坑点提醒</div><div class="field-b">⚠️ 返程进京（G4 杜家坎、五环）傍晚易堵，9 点出发午后抵京能避开高峰；若当天有事需晚归，建议改高铁。</div></div>
+        <div class="field"><div class="field-t"><i data-lucide="repeat"></i> 本段 Plan B</div><div class="field-b">⚠️ 若返程遇高速封路，改走京昆 G5 北线或从石家庄转京石高速；疲劳时在石家庄过夜次日返（可选）。</div></div>
+      </div>
+    </div>
+
+    <div class="field" style="margin-top:16px"><div class="field-t"><i data-lucide="camera"></i> 沿途看点</div>
+      <ul class="ul">
+        <li><b>清晨古城(自愿)</b> — 如能早起，可看古城晨雾与开门瞬间——但本路书默认 9 点后出发，此为可选项不强制。</li>
+        <li><b>晋商博物馆(可选)</b> — 出发前 1h 可快逛，了解晋商历史（选）。</li>
+        <li><b>返程沿途</b> — 太行山脉风光，服务区休整。</li>
+      </ul>
+    </div>
+
+    
+
+    <div class="field" style="margin-top:6px"><div class="field-t"><i data-lucide="hotel"></i> 🏨 本晚住宿（预算 300–400 元/晚）</div>
+      <div class="hotel"><b>返程无住宿</b> · ¥—/晚<br>本日返京回家；若需中转休整可选石家庄经济酒店（约 260–330 元）。<br><span class="small-src">⚪ 参考价，请以平台实时为准 · <a style="color:var(--acc)" href="https://uri.amap.com/search?query=石家庄酒店" target="_blank" rel="noopener">高德找店 →</a></span></div>
+      <div class="hotel" style="margin-top:6px;border-left-color:var(--t3)"><b>备选：—</b> · ¥—/晚<br>返程当日以回到北京为主。</div>
+    </div>
+
+    <div class="field" style="margin-top:12px"><div class="field-t"><i data-lucide="utensils"></i> 🍜 今日美食（并入行程，不另罗列）</div>
+      <div class="food"><b>平遥早餐·头脑/粥面</b> · 人均 ¥20–40 — 出发前在古城吃碗头脑或莜面粥，暖身抗长途。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=平遥头脑" target="_blank" rel="noopener">高德找店 →</a></div>
+      <div class="food" style="margin-top:6px"><b>服务区简餐</b> · 人均 ¥30–60 — 太原/石家庄服务区面食简餐，补充能量。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=石家庄服务区" target="_blank" rel="noopener">高德找店 →</a></div>
+      <div class="food" style="margin-top:6px"><b>到家后自行解决</b> · 人均 ¥— — 返京后晚餐自理。 <a style="color:var(--acc)" href="https://uri.amap.com/search?query=北京" target="_blank" rel="noopener">高德找店 →</a></div>
+    </div>
+
+    
+
+  </div>
+</section>
+
+<section class="sect" id="appendix">
+  <div class="sect-head">
+    <span class="eyebrow">🧭 附录</span>
+    <h2>应急信息 · 花费预估 · 数据源</h2>
+  </div>
+
+  <h3 style="margin:18px 0 10px">🆘 应急信息 <span class="badge-ai">⚪ 请出行前复核</span></h3>
+  <table class="tbl">
+    <tr><th>类型</th><th>电话 / 信息</th><th>说明</th></tr>
+    <tr><td>全国高速公路救援</td><td>12122</td><td>事故/故障/封路</td></tr>
+    <tr><td>全国交通服务监督</td><td>12328</td><td>客运/投诉</td></tr>
+    <tr><td>五台山景区救援/咨询</td><td>0350-6543111(估)</td><td>山区救援，进山前记下</td></tr>
+    <tr><td>太原/大同 三甲医院</td><td>120</td><td>晋祠/云冈周边就近三甲</td></tr>
+    <tr><td>山西旅游投诉热线</td><td>0351-12345(估)</td><td>涉旅纠纷</td></tr>
+  </table>
+  <p style="font-size:11.5px;color:var(--t3);margin-top:5px">⚪ 电话为公开渠道整理，号码可能调整，出发前请核实。</p>
+
+  <h3 style="margin:22px 0 10px">💰 人均花费预估（5天4晚，双人出行分摊）</h3>
+  <table class="tbl">
+    <tr><th>项目</th><th>预算(人均)</th><th>说明</th></tr>
+    <tr><td>交通(高铁往返)</td><td>约 450–600 元</td><td>北京⇌大同/平遥往返二等座为主</td></tr>
+    <tr><td>交通(自驾分摊)</td><td>约 550–700 元</td><td>油费900-1000+过路费650-750 双人分摊</td></tr>
+    <tr><td>住宿(4晚)</td><td>约 600–800 元</td><td>300-400元/晚 ×4</td></tr>
+    <tr><td>门票</td><td>约 350–450 元</td><td>云冈+五台山+平遥通票+晋祠等</td></tr>
+    <tr><td>餐饮(5天)</td><td>约 450–650 元</td><td>按日均90-130元</td></tr>
+    <tr><td>其他(接驳/特产)</td><td>约 150–300 元</td><td>古城电瓶车、五台山接驳、伴手礼</td></tr>
+    <tr><td><b>合计</b></td><td><b>约 2000–2800 元</b></td><td>自驾略省，高铁更省力</td></tr>
+  </table>
+  <p style="font-size:11.5px;color:var(--t3);margin-top:5px">⚪ 价格数据抓取参考时间 2026-11-15，实际以平台实时为准。</p>
+
+  <h3 style="margin:22px 0 10px">📡 易变信息来源与抓取时间 <span class="badge-real">🟢 实时</span><span class="badge-ai">⚪ 估算</span></h3>
+  <table class="tbl">
+    <tr><th>信息</th><th>来源</th><th>抓取时间</th><th>状态</th></tr>
+    <tr><td>高铁车次/票价</td><td>12306 官网/App</td><td>2026-11-15</td><td>⚪ 估算，出发前以 12306 为准</td></tr>
+    <tr><td>门票预约(云冈/五台山/平遥/晋祠)</td><td>各景区官方公众号</td><td>2026-11-15</td><td>⚪ 请提前线上预约</td></tr>
+    <tr><td>实时路况/封路</td><td>高德地图</td><td>实时</td><td>🟢 出行当天以高德为准</td></tr>
+    <tr><td>油价/过路费</td><td>加油站/ETC</td><td>2026-11-15</td><td>⚪ 估算</td></tr>
+    <tr><td>天气(山区多变)</td><td>中央气象台</td><td>实时</td><td>🟢 五台山山区务必查天气</td></tr>
+    <tr><td>酒店价格</td><td>携程/美团</td><td>2026-11-15</td><td>⚪ 参考价</td></tr>
+  </table>
+</section>
+
+</div>
+
+<footer class="foot">
+  <p>🕐 本路书生成于 <b>2026-11-15</b>，易变信息基于该时刻实时数据，出行前请逐项复核。</p>
+  <p>⚠️ 地图为高德官方网页内嵌，非实时轨迹；高度与海拔以实地为准。数据来源：12306、高德地图、中央气象台、各景区官方公众号。</p>
+  <p>路书仅供出行参考，请以官方最新公告与现场实际为准。</p>
+</footer>
+
+<script>
+lucide.createIcons();
+document.querySelectorAll('.sight-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    btn.closest('.sight').classList.toggle('open');
+  });
+});
+var navLinks = document.querySelectorAll('#navLinks a');
+var sections = [];
+for (var i=0;i<navLinks.length;i++){
+  var href = navLinks[i].getAttribute('href');
+  if(href) sections.push(document.getElementById(href.replace('#','')));
+}
+function updateNav(){
+  var navEl = document.querySelector('#navLinks').closest('nav');
+  var navH = navEl ? navEl.offsetHeight : 0;
+  var vh = window.innerHeight;
+  var current=0, best=-1;
+  for(var i=0;i<sections.length;i++){
+    if(!sections[i]) continue;
+    var r = sections[i].getBoundingClientRect();
+    var vt = Math.max(r.top, navH);
+    var vb = Math.min(r.bottom, vh);
+    var v = Math.max(0, vb-vt);
+    if(v>best){ best=v; current=i; }
+  }
+  for(var j=0;j<navLinks.length;j++){
+    navLinks[j].classList.toggle('active', j===current);
+  }
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+window.addEventListener('resize', updateNav, {passive:true});
+updateNav();
+</script>
+
+<script>(function(){
+var d=document,b=d.body;if(!b)return;
+var old=b.querySelectorAll('[data-aigc-mark],#__xas_aigc_watermark__');
+for(var k=0;k<old.length;k++)old[k].parentNode&&old[k].parentNode.removeChild(old[k]);
+var f=d.createElement("div");
+f.id="__xas_aigc_watermark__";
+f.setAttribute("data-aigc-mark","true");
+f.style.cssText="position:fixed;bottom:8px;right:12px;z-index:2147483647;font-size:11px;padding:3px 7px;font-family:system-ui,sans-serif;pointer-events:none;color:rgba(30,30,30,0.6);background:rgba(255,255,255,0.4);border:0.5px solid rgba(0,0,0,0.08);border-radius:4px;line-height:1.4;backdrop-filter:blur(8px);";
+var paths=["M14.0072 26.6377C14.2318 25.9475 13.3696 25.4389 12.8659 25.9611C9.56694 29.3941 6.9736 33.4696 5.35587 37.9788C-0.86998 55.1279 7.72006 74.1728 24.7867 80.6891C33.1499 83.8815 41.0252 82.7894 44.7212 81.8812C54.0056 79.6016 63.1537 72.4609 66.7114 63.4447C67.1039 62.4525 66.6252 61.3286 65.6404 60.9222C63.78 60.1548 61.9263 59.3896 60.3721 58.7471C59.46 58.3702 58.4117 58.7402 57.9398 59.6076C56.4287 62.3753 54.8496 65.0568 52.4945 67.2274C46.0349 73.5893 36.1675 75.8621 27.5956 72.9036C14.6833 68.6487 7.76998 54.5307 12.124 41.7683C12.3668 41.0553 12.4916 40.3038 12.4621 39.55C12.242 33.8125 12.8228 30.2955 14.0072 26.6377Z","M73.6785 14.313C74.3682 14.5378 74.8765 13.675 74.3546 13.171C70.9241 9.86968 66.8514 7.27451 62.3454 5.65564C45.2084 -0.574603 26.1769 8.0215 19.6651 25.1002C16.4751 33.4692 17.5664 41.3501 18.474 45.0488C20.7519 54.3396 27.8876 63.4943 36.8974 67.0544C37.8889 67.4472 39.012 66.9681 39.4182 65.9827C40.185 64.1209 40.9497 62.2659 41.5918 60.7107C41.9684 59.7979 41.5986 58.7489 40.7318 58.2767C37.9661 56.7645 35.2865 55.1843 33.1174 52.8275C26.76 46.3634 24.4888 36.489 27.4452 27.9111C31.6971 14.9897 45.8051 8.07145 58.5586 12.4285C59.271 12.6715 60.022 12.7964 60.7753 12.7668C66.5088 12.5466 70.0233 13.1278 73.6785 14.313Z","M85.9922 73.9549C85.7676 74.6451 86.6298 75.1537 87.1335 74.6315C90.4324 71.1985 93.0258 67.123 94.6435 62.6138C100.869 45.4647 92.2793 26.4198 75.2127 19.9035C66.8495 16.7111 58.9742 17.8033 55.2782 18.7114C45.9938 20.991 36.8456 28.1317 33.288 37.1479C32.8955 38.1401 33.3742 39.264 34.3589 39.6704C36.2194 40.4378 38.0731 41.203 39.6273 41.8455C40.5394 42.2224 41.5876 41.8524 42.0596 40.985C43.5706 38.2173 45.1498 35.5358 47.5049 33.3652C53.9645 27.0033 63.8319 24.7305 72.4038 27.689C85.3161 31.9439 92.2294 46.0619 87.8754 58.8243C87.6326 59.5373 87.5078 60.2888 87.5373 61.0426C87.7574 66.7801 87.1766 70.2971 85.9922 73.9549Z","M26.2674 86.2849C25.5777 86.0601 25.0694 86.9229 25.5913 87.4269C29.0219 90.7282 33.0945 93.3234 37.6028 94.9423C54.7398 101.173 73.7713 92.5764 80.2831 75.4977C83.4731 67.1287 82.3818 59.2478 81.4742 55.5491C79.1963 46.2583 72.0606 37.1036 63.0508 33.5435C62.0593 33.1507 60.9362 33.6298 60.53 34.6152C59.7632 36.477 58.9985 38.3297 58.3564 39.885C57.9798 40.7977 58.3496 41.8467 59.2163 42.3212C61.9821 43.8334 64.6617 45.4114 66.8285 47.7704C73.1859 54.2345 75.4571 64.1089 72.5007 72.6869C68.2488 85.6082 54.1408 92.5265 41.3874 88.1694C40.6749 87.9264 39.9239 87.8015 39.1706 87.8311C33.4371 88.0513 29.9226 87.4701 26.2674 86.2826V86.2849Z"];
+b.appendChild(f);
+var svg='<svg width="14" height="14" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:-2px;margin:0 4px">';
+for(var i=0;i<paths.length;i++)svg+='<path d="'+paths[i]+'" fill="rgba(30,30,30,0.5)"/>';
+svg+="</svg>";
+f.innerHTML="本页面由"+svg+"超级小爱AI生成";
+})();</script>
+</body>
+</html>
